@@ -8,8 +8,10 @@ public class ShowMana : MonoBehaviour
     [SerializeField]
     private GameObject crystalPrefab;
 
-    [SerializeField]
-    private GameObject gManager;
+    //private GameObject crystalParent;
+
+    //[SerializeField]
+    //private GameObject gManager;
 
     //[SerializeField]
     //private Component manaSystem;
@@ -19,7 +21,7 @@ public class ShowMana : MonoBehaviour
 
     private Vector3 localPos;
 
-    private float spaceBetweenCrystal;
+    private float spaceBetweenCrystal = 0.5f;
 
 	// Use this for initialization
 	void Start ()
@@ -28,13 +30,10 @@ public class ShowMana : MonoBehaviour
         localPos = gameObject.transform.localPosition;
 
         UpdateManaPrefabsAmount();
+
+        //crystalParent = GetComponent<Transform>();
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
     public void UpdateManaPrefabsAmount()
     {
@@ -45,7 +44,13 @@ public class ShowMana : MonoBehaviour
 
         for (int i = 0; i < manaAmount; i++)
         {
-            Instantiate(crystalPrefab, new Vector3(localPos.x + (i * spaceBetweenCrystal), localPos.y, localPos.z), Quaternion.identity);
+            //Make an crystal
+            GameObject inst = Instantiate(crystalPrefab, new Vector3(transform.position.x + (i * spaceBetweenCrystal), localPos.y, localPos.z), Quaternion.identity);
+
+            //Set the name of the crystal
+            inst.name = inst.name + " - " + i.ToString();
+            //Set the parent of the transform
+            inst.transform.parent = transform;
         }
     }
 }
