@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Speelgrond final.ma
-//Last modified: Wed, Dec 05, 2018 09:25:47 PM
+//Name: Speelgrond.ma
+//Last modified: Wed, Dec 05, 2018 09:26:14 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
@@ -16,7 +16,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "F9F07CA8-49E1-6491-427D-5B86D0B7B24A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.8891104420244473 5.239666350611845 1.4082374658423793 ;
+	setAttr ".t" -type "double3" -3.7663304820414036 5.1038813096661535 1.7313958299717171 ;
 	setAttr ".r" -type "double3" -48.338352724002476 -4722.9999999997563 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "00F1324F-473C-BF09-64DF-02B08F2A1F68";
@@ -64783,4 +64783,4 @@ connectAttr "groupId38.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId39.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId40.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Belichting.iog" ":defaultLightSet.dsm" -na;
-// End of Speelgrond final.ma
+// End of Speelgrond.ma
