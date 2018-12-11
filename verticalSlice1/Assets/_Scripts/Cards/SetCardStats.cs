@@ -25,29 +25,4 @@ public class SetCardStats : MonoBehaviour {
         name.text = cardSt.Name;
         description.text = cardSt.Description;
     }
-
-
-    private bool drag = false;
-	// Update is called once per frame
-	void Update () {
-        if (drag)
-        {
-            Vector3 ps = Input.mousePosition;
-            ps.z = 10;
-            Vector3 mp = Camera.main.ScreenToWorldPoint(ps);
-            transform.position = mp;
-        }
-    }
-
-    void OnMouseDown()
-    {
-        print("Click");
-        drag = true;
-    }
-
-    void OnMouseUp()
-    {
-        print("UnClick");
-        drag = false;
-    }
 }
