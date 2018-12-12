@@ -9,7 +9,10 @@ public class SetCardStats : MonoBehaviour {
     public Card cardSt;
 
     // the object we need to adjust to the card's stats
+<<<<<<< HEAD
     public GameObject mesh;
+=======
+>>>>>>> parent of 094159d... Revert "Merge branch 'Development' into Dev-Peter"
     public Text mana, manaShade;
     public Text attack, attackShade;
     public Text health, healthShade;
