@@ -1,23 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//using Boo.Lang;
 using UnityEngine;
 
 public class ManaSystem : MonoBehaviour
 {
     private int mana = 1;
-
+    public bool playable;
+    public int cardMana;
     public int Mana
     {
-        get { return mana; }
-
+        get
+        {
+            return mana;
+        }
+        
         set
         {
-            if (value < 0)
+            if (value >= cardMana)
             {
-                value = 0;
-                Debug.Log(value);
+                playable = true;
+                value -= cardMana;
             }
-            mana = value;
+            else
+            {
+                playable = false;
+            }
         }
     }
 }
