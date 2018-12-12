@@ -9,7 +9,6 @@ public class SetCardStats : MonoBehaviour {
     public Card cardSt;
 
     // the object we need to adjust to the card's stats
-    public GameObject mesh;
     public Text mana, manaShade;
     public Text attack, attackShade;
     public Text health, healthShade;
