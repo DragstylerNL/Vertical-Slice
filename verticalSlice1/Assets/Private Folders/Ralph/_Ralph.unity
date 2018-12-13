@@ -113,56 +113,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD:verticalSlice1/Assets/Private Folders/Ralph/Ralph.unity
-<<<<<<< HEAD:verticalSlice1/Assets/Private Folders/Ralph/Ralph.unity
-=======
 --- !u!1001 &429320931
 =======
 --- !u!1001 &293991406
->>>>>>> parent of 094159d... Revert "Merge branch 'Development' into Dev-Peter":verticalSlice1/Assets/Private Folders/Ralph/_Ralph.unity
+=======
+--- !u!1001 &293991406
+>>>>>>> Development:verticalSlice1/Assets/Private Folders/Ralph/_Ralph.unity
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD:verticalSlice1/Assets/Private Folders/Ralph/Ralph.unity
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4827921263102942, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0c7a2c30d6f05a94e8ee682d13e357e6, type: 2}
-  m_IsPrefabAsset: 0
->>>>>>> parent of c7c4465... Merge branch 'Dev-Ralph' into Development:verticalSlice1/Assets/Private Folders/Ralph/_Ralph.unity
 =======
     - target: {fileID: 4374106776234456, guid: 07c3f311a5f47b34f97ca42789e64a3d, type: 2}
       propertyPath: m_LocalPosition.x
@@ -203,7 +165,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07c3f311a5f47b34f97ca42789e64a3d, type: 2}
   m_IsPrefabAsset: 0
->>>>>>> parent of 094159d... Revert "Merge branch 'Development' into Dev-Peter":verticalSlice1/Assets/Private Folders/Ralph/_Ralph.unity
 --- !u!1 &1066865226
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,8 +334,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -391,8 +352,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
