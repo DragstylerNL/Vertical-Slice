@@ -27,28 +27,23 @@ public class DrawFromDeck : MonoBehaviour
 
     private IEnumerator PlayAnimation(float waitTime)
     {
-        var speed = 10;
 
-
-
-        while (transform.localPosition != positionsList[1])
+        if (transform.localPosition != positionsList[1])
         {
-            var step = speed * Time.deltaTime;
-            //Stage 1: Deck to show
-            transform.localPosition = Vector3.MoveTowards(transform.position, positionsList[1], step);
+            iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[1], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
+            iTween.RotateTo(this.gameObject, iTween.Hash("rotation", new Vector3(90, 0, 0), "easeType", "easeInOutBack"));
             Debug.Log("Moving");
         }
 
         yield return new WaitForSeconds(waitTime);
 
-        while (transform.localPosition != positionsList[2])
+        if (transform.localPosition != positionsList[2])
         {
-            var step = speed * Time.deltaTime;
-            //Stage 1: Deck to show
-            transform.localPosition = Vector3.MoveTowards(transform.position, positionsList[2], step);
+            iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[2], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
             Debug.Log("Moving");
         }
 
         yield return new WaitForSeconds(waitTime);
     }
+
 }
