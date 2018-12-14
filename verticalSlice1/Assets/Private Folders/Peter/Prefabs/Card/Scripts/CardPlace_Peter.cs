@@ -9,6 +9,7 @@ public class CardPlace_Peter : MonoBehaviour
 
     //Position vector when placed
     private Vector3 placedPos;
+    //Boi
 
     [SerializeField]
     private GameObject ahHolder;//Attack & Health gameobject list
