@@ -31,7 +31,7 @@ public class DrawFromDeck : MonoBehaviour
         if (transform.localPosition != positionsList[1])
         {
             iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[1], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
-            iTween.RotateTo(this.gameObject, iTween.Hash("rotation", new Vector3(90, 0, 0), "easeType", "easeInOutBack"));
+            iTween.RotateTo(this.gameObject, iTween.Hash("rotation", new Vector3(-90, 0, 0), "time", 0.5f, "easeType", "easeInOutBack"));
             Debug.Log("Moving");
         }
 
