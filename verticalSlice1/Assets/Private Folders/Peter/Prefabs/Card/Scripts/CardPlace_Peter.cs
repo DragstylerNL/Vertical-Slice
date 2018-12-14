@@ -9,6 +9,7 @@ public class CardPlace_Peter : MonoBehaviour
 
     //Position vector when placed
     private Vector3 placedPos;
+    //Boi
 
     [SerializeField]
     private GameObject ahHolder;//Attack & Health gameobject list
@@ -34,7 +35,8 @@ public class CardPlace_Peter : MonoBehaviour
     {
         DisappearObjects();
         SetUpPlacedCard();
-        iTween.MoveTo(gameObject, iTween.Hash("position", placedPos, "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
+        iTween.MoveTo(gameObject, iTween.Hash("position", placedPos, "time", .5f, "easeType", iTween.EaseType.easeInSine));
+        //iTween.RotateTo(gameObject, iTween.Hash("rotation", new Vector3(90, 0, 0), "easeType", "easeInOutBack"));
         //transform.position = placedPos;
 
         //Run the attack script
