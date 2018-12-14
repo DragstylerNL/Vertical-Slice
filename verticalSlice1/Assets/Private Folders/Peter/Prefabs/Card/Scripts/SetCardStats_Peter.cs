@@ -14,13 +14,13 @@ public class SetCardStats_Peter : MonoBehaviour
 
     void Start ()
     {
-        mana.text = cardSt.Mana.ToString();
+       /*mana.text = cardSt.Mana.ToString();
 
         attack.text = cardSt.Attack.ToString();
 
         health.text = cardSt.Health.ToString();
 
         cname.text = cardSt.Name;
-        description.text = cardSt.Description;
+        description.text = cardSt.Description;*/
     }
 }
