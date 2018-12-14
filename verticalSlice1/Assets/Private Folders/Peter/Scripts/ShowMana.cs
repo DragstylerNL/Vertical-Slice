@@ -21,7 +21,7 @@ public class ShowMana : MonoBehaviour
 
     private Vector3 localPos;
 
-    private float spaceBetweenCrystal = 0.5f;
+    private float spaceBetweenCrystal = 0.4f;//The gap
 
 	// Use this for initialization
 	void Start ()
