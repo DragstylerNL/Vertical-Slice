@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class CardDrag_Peter : MonoBehaviour {
 
-    private bool drag = false;
+    private bool cDrag = true, isDragging = false, cAttack = false, isAttacking = false;
     private bool hover = false;
     private Vector3 prevPos;
 
     void OnMouseDown()
     {
+        //Drag the card if clicked on
         prevPos = transform.position;
-        drag = true;
+        isDragging = true;
         if (hover) { }
+
+        if (cAttack)
+        {
+            GetComponent<CardAttack_Peter>().CanAttack(true);
+            isAttacking = true;
+        }
     }
 
     void OnMouseUp()
     {
-        drag = false;
+        //Return it to the hand if mouse up
+        isDragging = false;
         PosLogic();
     }
 
     void OnMouseOver()
     {
-        if (!drag)
+        //Hover the object when the mouse goes over it
+        if (cDrag && !isDragging)
         {
             hover = true;
         }
@@ -36,9 +45,14 @@ public class CardDrag_Peter : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (drag)
+        if (cDrag && isDragging)
         {
             PosChange();
+        }
+
+        if (isAttacking)
+        {
+            
         }
     }
 
@@ -55,11 +69,15 @@ public class CardDrag_Peter : MonoBehaviour {
 
     void PosLogic()
     {
-        if (transform.position.x > 5f && transform.position.x < 15f && transform.position.z > -15.6f && transform.position.z < -10f)
+        //If inside plaing field
+        if (transform.position.x > -3f && transform.position.x < 3f && transform.position.z > -1f && transform.position.z < 1f)
         {
             print("Noice");
             //Edit here
-
+            cDrag = false;
+            isDragging = false;
+            cAttack = true;
+            gameObject.GetComponent<CardPlace_Peter>().PlaceCard();
 
             return;
         }

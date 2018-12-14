@@ -10,7 +10,7 @@ public class SetCardStats_Peter : MonoBehaviour
     public Card cardSt;
 
     // the object we need to adjust to the card's stats
-    public Text mana, attack, health, name, description;
+    public Text mana, attack, health, cname, description;
 
     void Start ()
     {
@@ -20,7 +20,7 @@ public class SetCardStats_Peter : MonoBehaviour
 
         health.text = cardSt.Health.ToString();
 
-        name.text = cardSt.Name;
+        cname.text = cardSt.Name;
         description.text = cardSt.Description;
     }
 }
