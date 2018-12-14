@@ -34,8 +34,8 @@ public class CardPlace_Peter : MonoBehaviour
     {
         DisappearObjects();
         SetUpPlacedCard();
-        //iTween.MoveTo(gameObject, iTween.Hash("position", placedPos, "time", 2f,"easeType", "easeInOutExpo", "time", 1f));
-        transform.position = placedPos;
+        iTween.MoveTo(gameObject, iTween.Hash("position", placedPos, "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
+        //transform.position = placedPos;
 
         //Run the attack script
         //GetComponent<CardAttack_Peter>().CanAttack(true);
