@@ -8,18 +8,35 @@ public class CardDrag_Peter : MonoBehaviour {
 
     private Vector3 prevPos;
 
+    private Vector3 transPosition;
+
     private List<Vector3> positionsList = new List<Vector3>();
 
-    private enum cardStages { InHand, Dragging, Showing, Floating, Placed, Attacking};
+    /// <summary>
+    /// The stages the card can be in.
+    /// </summary>
+    private enum cardStages
+    {
+        InHand,     //The card is in the Hand of the player.
+        Dragging,   //If the player Drags the card.
+        Showing,    //Floating in the air in Hand.
+        Floating,   //Showing from Deck to Hand.
+        Placed,     //The card when Placed on the board.
+        Attacking   //When the card is Placed and the player can attack the enemy.
+    }
 
+    //Current card stage. So you can know what stage the card is currently in
     private cardStages currentCardStage = cardStages.InHand;
 
     void Start()
     {
-        positionsList.Add(new Vector3(0, .25f, -5.1f));//Hand Position
-        positionsList.Add(new Vector3(0, 6, -1.2f));//Showing Position
-        positionsList.Add(new Vector3(0, 3.5f, -.5f));//Floating Position
+        positionsList.Add(new Vector3(0, .25f, -5.1f));     //Hand Position
+        positionsList.Add(new Vector3(0, 6, -1.2f));        //Showing Position
+        positionsList.Add(new Vector3(0, 3.5f, -.5f));      //Floating Position
 
+        transPosition = transform.position;
+
+        //The start position in in the hand
         transform.position = positionsList[0];
     }
 
@@ -29,15 +46,18 @@ public class CardDrag_Peter : MonoBehaviour {
         //Drag the card if clicked on
         prevPos = transform.position;
 
-        //isDragging = true;
-        currentCardStage = cardStages.Dragging;
 
-        
-
-        if (cAttack)
+        if (currentCardStage == cardStages.Showing)
         {
+            //Set the Stage to Dragging
+            currentCardStage = cardStages.Dragging;
+        }
+
+        else if (cAttack && currentCardStage == cardStages.Placed)
+        {
+            cAttack = false;
             GetComponent<CardAttack_Peter>().CanAttack(true);
-            //isAttacking = true;
+            
             currentCardStage = cardStages.Attacking;
         }
     }
@@ -47,46 +67,60 @@ public class CardDrag_Peter : MonoBehaviour {
         //Return it to the hand if mouse up
         //isDragging = false;
 
-        PosLogic();
+        if (currentCardStage == cardStages.Dragging)
+        PositionLogic();
     }
 
-    void OnMouseOver()
+    void OnMouseEnter()
     {
         //Hover the object when the mouse goes over it
         if (cDrag && currentCardStage == cardStages.InHand)
         {
-            hover = true;
+            currentCardStage = cardStages.Showing;
         }
     }
 
     void OnMouseExit()
     {
+        //Hover the object when the mouse goes over it
+        if (cDrag && currentCardStage == cardStages.Showing)
+        {
+            currentCardStage = cardStages.InHand;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Dragging
         if (cDrag && currentCardStage == cardStages.Dragging)
         {
-            PosChange();
+            PositionChange();
         }
 
-        if (isAttacking)
+        //Hover above the field when attacking
+        else if (currentCardStage == cardStages.Attacking)
         {
-            
+            iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(transform.position.x, .3f, transform.position.z), "time", .5f, "easeType", iTween.EaseType.easeInOutSine));
         }
 
         //Hover the card when going over it
-        if (currentCardStage == cardStages.Floating)
+        else if (currentCardStage == cardStages.Showing)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
+            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", .1f, "easeType", iTween.EaseType.easeInOutSine));
+        }
+
+        //Hover the card when going over it
+        else if (currentCardStage == cardStages.InHand)
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[0], "time", .1f, "easeType", iTween.EaseType.easeInOutSine));
         }
     }
 
 
 
 
-    void PosChange()
+    void PositionChange()
     {
         Vector3 ps = Input.mousePosition;
         ps.z = 9;
@@ -96,7 +130,7 @@ public class CardDrag_Peter : MonoBehaviour {
         transform.position = mp;
     }
 
-    void PosLogic()
+    void PositionLogic()
     {
         //If inside plaing field
         if (transform.position.x > -3f && transform.position.x < 3f && transform.position.z > -1f && transform.position.z < 1f)
@@ -113,10 +147,10 @@ public class CardDrag_Peter : MonoBehaviour {
 
         print("Nope");
         //transform.position = prevPos;
-        PosStage();
+        PositionStage();
     }
 
-    void PosStage()
+    void PositionStage()
     {
 
     }

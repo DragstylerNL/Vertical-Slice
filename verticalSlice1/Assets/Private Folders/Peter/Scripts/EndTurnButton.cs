@@ -6,37 +6,30 @@ public class EndTurnButton : MonoBehaviour
 {
 
     [SerializeField]
-    private bool endTurn = true;
-    [SerializeField]
-    private bool turning = false;
+    private bool endTurn = true, cTurn = true;
 
     private float currentRotation = 0;
 
 
     void OnMouseDown()
     {
+        if (endTurn && cTurn)
         StartTurningButton();
-        Debug.Log("Clicked");
     }
 
 
     private void StartTurningButton()
     {
-        turning = true;
-        StartCoroutine(RotateImage());
+        cTurn = false;
+        RotateButton(180);
     }
 
-
-    IEnumerator RotateImage()
+    /// <summary>
+    /// Rotate the button on the X axes
+    /// </summary>
+    /// <param name="_value">The value it needs to</param>
+    void RotateButton(float _value)
     {
-
-        float moveSpeed = 0.1f;
-        while (transform.rotation.x < 180)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(180, 0, 0), moveSpeed * Time.time);
-            yield return null;
-        }
-        transform.rotation = Quaternion.Euler(180, 0, 0);
-        yield return null;
+        iTween.RotateTo(gameObject, iTween.Hash("rotation", new Vector3(_value, 0, 0), "time", .5f, "easeType", iTween.EaseType.easeInOutQuad));
     }
 }
