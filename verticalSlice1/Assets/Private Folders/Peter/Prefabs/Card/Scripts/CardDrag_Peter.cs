@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CardDrag_Peter : MonoBehaviour {
 
-    private bool cDrag = true, isDragging = false, cAttack = false, isAttacking = false;
-    private bool hover = false;
+    private bool cDrag = true, isDragging = false, cAttack = false, isAttacking = false, hover = false;
+
     private Vector3 prevPos;
 
     private List<Vector3> positionsList = new List<Vector3>();
