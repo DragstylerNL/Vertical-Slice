@@ -12,7 +12,7 @@ public class ManaCrystal : MonoBehaviour
     {
         if (currentCrystalStage == crystalStages.Active)
         {
-
+            //Renderer
         }
 
         else if (currentCrystalStage == crystalStages.Spend)

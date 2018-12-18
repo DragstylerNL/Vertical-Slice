@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: d97a67b0d254e634f8a52ef7524907e9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Belichting
+    100002: bord
+    100004: card_holder
+    100006: card_holder2
+    100008: Enemy_Card
+    100010: Enemy_kant
+    100012: enemy_kant
+    100014: enemy_kant7
+    100016: enemy_power
+    100018: enemy_stuk
+    100020: Main_players
+    100022: mana_points
+    100024: mana_points_enemy
+    100026: mana_points_player
+    100028: Manapoints
+    100030: Mesh
+    100032: Mesh 1
+    100034: Mesh2
+    100036: nieuw_stuk1
+    100038: pDisc12
+    100040: Player_card
+    100042: Player_kant
+    100044: player_powe
+    100046: polySurface2
+    100048: Referentie
+    100050: //RootNode
+    100052: Spelbord
+    100054: TOP_DOWN_CAMERA
+    100056: transform1
+    100058: transform17
+    100060: transform2
+    100062: troep
+    100064: turn_button
+    400000: Belichting
+    400002: bord
+    400004: card_holder
+    400006: card_holder2
+    400008: Enemy_Card
+    400010: Enemy_kant
+    400012: enemy_kant
+    400014: enemy_kant7
+    400016: enemy_power
+    400018: enemy_stuk
+    400020: Main_players
+    400022: mana_points
+    400024: mana_points_enemy
+    400026: mana_points_player
+    400028: Manapoints
+    400030: Mesh
+    400032: Mesh 1
+    400034: Mesh2
+    400036: nieuw_stuk1
+    400038: pDisc12
+    400040: Player_card
+    400042: Player_kant
+    400044: player_powe
+    400046: polySurface2
+    400048: Referentie
+    400050: //RootNode
+    400052: Spelbord
+    400054: TOP_DOWN_CAMERA
+    400056: transform1
+    400058: transform17
+    400060: transform2
+    400062: troep
+    400064: turn_button
+    2000000: TOP_DOWN_CAMERA
+    2100000: lambert4
+    2100002: defaultPolygonShader2
+    2100004: lambert3
+    2300000: card_holder
+    2300002: card_holder2
+    2300004: Enemy_Card
+    2300006: enemy_power
+    2300008: mana_points_enemy
+    2300010: mana_points_player
+    2300012: Player_card
+    2300014: player_powe
+    2300016: polySurface2
+    2300018: turn_button
+    3300000: card_holder
+    3300002: card_holder2
+    3300004: Enemy_Card
+    3300006: enemy_power
+    3300008: mana_points_enemy
+    3300010: mana_points_player
+    3300012: Player_card
+    3300014: player_powe
+    3300016: polySurface2
+    3300018: turn_button
+    4300000: Player_card
+    4300002: Enemy_Card
+    4300004: turn_button
+    4300006: card_holder
+    4300008: card_holder2
+    4300010: player_powe
+    4300012: polySurface2
+    4300014: enemy_power
+    4300016: mana_points_player
+    4300018: mana_points_enemy
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
