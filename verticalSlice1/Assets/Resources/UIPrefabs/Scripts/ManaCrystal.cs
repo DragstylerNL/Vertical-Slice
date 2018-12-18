@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManaCrystal : MonoBehaviour {
+public class ManaCrystal : MonoBehaviour
+{
+    public enum crystalStages { Active, Spend }
 
-	// Use this for initialization
-	void Start ()
+    public crystalStages currentCrystalStage = crystalStages.Spend;
+
+    public void UpdateStage()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+        if (currentCrystalStage == crystalStages.Active)
+        {
+
+        }
+
+        else if (currentCrystalStage == crystalStages.Spend)
+        {
+
+        }
+    }
 }
