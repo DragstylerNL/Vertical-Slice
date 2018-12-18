@@ -146,7 +146,7 @@ public class CardDrag_Peter : MonoBehaviour {
         }
 
         print("Nope");
-        //transform.position = prevPos;
+        iTween.MoveTo(gameObject, iTween.Hash("position", prevPos, "time", .1f, "easeType", iTween.EaseType.easeInOutSine)); ;
         PositionStage();
     }
 

@@ -28,7 +28,7 @@ public class CardPlace_Peter : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        placedPos = new Vector3(0, .15f, -.9f);
+        placedPos = new Vector3(0, .15f, -1.6f);//-.9f
 
         startRotation = new Vector3(-90, 180, 0);
 
@@ -45,12 +45,6 @@ public class CardPlace_Peter : MonoBehaviour
         //Disapear the objects
         DisappearObjects();
 
-        //Setup all the objects that needs to stay to the right position
-        SetUpPlacedCard();
-        
-        //Start the animation routine
-        StartCoroutine(AnimationPlaceCard());
-
     }
 
     /// <summary>
@@ -58,6 +52,12 @@ public class CardPlace_Peter : MonoBehaviour
     /// </summary>
     private void DisappearObjects()
     {
+        //Setup all the objects that needs to stay to the right position
+        SetUpPlacedCard();
+
+        //Start the animation routine
+        StartCoroutine(AnimationPlaceCard());
+
         //Deactivate all the gameobjects in the list
         foreach (var objects in disappearList)
         {
@@ -81,6 +81,9 @@ public class CardPlace_Peter : MonoBehaviour
         //Move the AH icons to the right place
         attackObj.transform.localPosition = new Vector3(ahDistancePlaced,0,0);
         healthObj.transform.localPosition = new Vector3(-ahDistancePlaced, 0, 0);
+
+        //Increase the size
+        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
     }
 
     private IEnumerator AnimationPlaceCard()
