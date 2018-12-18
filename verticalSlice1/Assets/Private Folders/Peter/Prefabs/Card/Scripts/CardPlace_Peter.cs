@@ -18,7 +18,7 @@ public class CardPlace_Peter : MonoBehaviour
 
 
     [SerializeField]
-    private GameObject ahHolder;                            //Attack & Health gameobject list.
+    private GameObject ahHolder, frameObject;                            //Attack & Health gameobject list.
     private Vector3 ahPositionStart, ahPositionPlaced;      //Attack & Health position.
     private float ahDistanceStart, ahDistancePlaced;        //Attack & Health horizontal distance from the ahPosition.
 
