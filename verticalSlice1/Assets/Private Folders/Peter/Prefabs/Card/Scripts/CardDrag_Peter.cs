@@ -101,7 +101,7 @@ public class CardDrag_Peter : MonoBehaviour {
         //Hover above the field when attacking
         else if (currentCardStage == cardStages.Attacking)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(transform.position.x, .3f, transform.position.z), "time", .5f, "easeType", iTween.EaseType.easeInOutSine));
+            iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(transPosition.x, .3f, transPosition.z), "time", .5f, "easeType", iTween.EaseType.easeInOutSine));
         }
 
         //Hover the card when going over it

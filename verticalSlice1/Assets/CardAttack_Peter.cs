@@ -39,15 +39,33 @@ public class CardAttack_Peter : MonoBehaviour
         
     }
 
-    public void SetUpAttack(GameObject _attackObject)
+    /// <summary>
+    /// Sets up the attack for when the "End Turn" butten is pressed.
+    /// </summary>
+    /// <param name="_attackTargetObject">The Target object</param>
+    public void SetUpAttack(GameObject _attackTargetObject)
     {
         cAttack = false;
 
-
+        EnemyHero = _attackTargetObject;
     }
 
-    public void Attack()
+    public bool Attack()
     {
+        var attackSucceeded = false;
+
+        if (EnemyHero != null)
+        {
+
+
+
+            //Say that it went fine
+            attackSucceeded = true;
+        }
+
+
+        return attackSucceeded;
+
 
     }
 
