@@ -36,6 +36,7 @@ public class DrawFromDeck : MonoBehaviour
         //----------------------------------------------------------------------------------------//
         if (transform.localPosition != positionsList[1])
         {
+            iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[1], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
             iTween.RotateTo(this.gameObject, iTween.Hash("rotation", new Vector3(-90, 180, 0), "time", 0.5f, "easeType", "easeInOutBack"));
             Debug.Log("Moving");
         } //verplaatst de kaart van "deck" naar het midden van het scherm met de Itween plugin. draait ook gelijk de kaart.
@@ -46,6 +47,7 @@ public class DrawFromDeck : MonoBehaviour
         //----------------------------------------------------------------------------------------//
         if (transform.localPosition != positionsList[2])
         {
+            iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[2], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
             Debug.Log("Moving");
         } //verplaatst de kaart van het midden van het scherm naar het "hand" van de speler
         //----------------------------------------------------------------------------------------//
@@ -53,9 +55,9 @@ public class DrawFromDeck : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
     }
 
-    void ItweenMove()
-    {
-        iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
-    }
+    //void ItweenMove()
+    //{
+    //    iTween.MoveTo(this.gameObject, iTween.Hash("position", positionsList[0], "time", 1f, "easeType", iTween.EaseType.easeInOutSine));
+    //}
 
 }
