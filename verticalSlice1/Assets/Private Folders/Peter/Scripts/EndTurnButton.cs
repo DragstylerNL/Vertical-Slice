@@ -10,11 +10,31 @@ public class EndTurnButton : MonoBehaviour
 
     private float currentRotation = 0;
 
+    private PlayerHandHolder playerHandComponent;
+
+    // Use this for initialization
+    void Start()
+    {
+        playerHandComponent = GameObject.Find("PlayerHandHolder").GetComponent<PlayerHandHolder>();
+
+    }
 
     void OnMouseDown()
     {
         if (endTurn && cTurn)
-        StartTurningButton();
+        {
+            StartTurningButton();
+
+            //Get the current attacking card object
+            var attackingCard = playerHandComponent.GetAttackingCard();
+
+            //Setup the card attack with this gameobject as target
+            if (attackingCard != null)
+                attackingCard.GetComponent<CardAttack_Peter>().Attack();
+            else
+                Debug.Log("Not Attacking");
+        }
+        
     }
 
 

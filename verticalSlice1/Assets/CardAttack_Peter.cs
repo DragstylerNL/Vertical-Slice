@@ -57,7 +57,7 @@ public class CardAttack_Peter : MonoBehaviour
         if (EnemyHero != null)
         {
 
-
+            Debug.Log("Attack");
 
             //Say that it went fine
             attackSucceeded = true;

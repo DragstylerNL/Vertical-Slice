@@ -20,12 +20,25 @@ public class EnemyHero : MonoBehaviour
 		
 	}
 
+    private void OnMouseEnter()
+    {
+        gameObject.GetComponent<Renderer>().material.SetFloat("_Glossiness", 0.5f);
+    }
+
+    private void OnMouseExit()
+    {
+        gameObject.GetComponent<Renderer>().material.SetFloat("_Glossiness", 1f);
+    }
+
     void OnMouseDown()
     {
         //Get the current attacking card object
         var attackingCard = playerHandComponent.GetAttackingCard();
 
         //Setup the card attack with this gameobject as target
-        attackingCard.GetComponent<CardAttack_Peter>().SetUpAttack(gameObject);
+        if (attackingCard != null)
+            attackingCard.GetComponent<CardAttack_Peter>().SetUpAttack(gameObject);
+        else
+            Debug.Log("Not Attacking");
     }
 }

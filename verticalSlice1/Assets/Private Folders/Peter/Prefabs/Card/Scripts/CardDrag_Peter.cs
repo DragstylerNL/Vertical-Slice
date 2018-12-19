@@ -69,6 +69,8 @@ public class CardDrag_Peter : MonoBehaviour {
 
         if (currentCardStage == cardStages.Dragging)
         PositionLogic();
+
+        currentCardStage = cardStages.Placed;
     }
 
     void OnMouseEnter()
@@ -146,13 +148,16 @@ public class CardDrag_Peter : MonoBehaviour {
             return;
         }
 
+
         print("Nope");
-        iTween.MoveTo(gameObject, iTween.Hash("position", prevPos, "time", .1f, "easeType", iTween.EaseType.easeInOutSine)); ;
-        PositionStage();
+        iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", .1f, "easeType", iTween.EaseType.easeInOutSine));
+        //currentCardStage = cardStages.Showing;
+
+        //PositionStage();
     }
 
-    void PositionStage()
-    {
+    //void PositionStage()
+    //{
 
-    }
+    //}
 }
