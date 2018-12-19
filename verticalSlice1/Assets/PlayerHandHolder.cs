@@ -26,6 +26,21 @@ public class PlayerHandHolder : MonoBehaviour
 
     }
 
+    public GameObject GetAttackingCard()
+    {
+        GameObject attackingCard = null;
+
+        foreach (GameObject _card in playerCards)
+        {
+            if (_card.GetComponent<CardDrag_Peter>().currentCardStage == CardDrag_Peter.cardStages.Attacking)
+            {
+                attackingCard = _card;
+            }
+        }
+
+        return attackingCard;
+    }
+
     void InstantiateCard(GameObject _prefab)
     {
         //Make a crystal

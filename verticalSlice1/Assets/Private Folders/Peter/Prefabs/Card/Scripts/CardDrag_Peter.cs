@@ -15,7 +15,7 @@ public class CardDrag_Peter : MonoBehaviour {
     /// <summary>
     /// The stages the card can be in.
     /// </summary>
-    private enum cardStages
+    public enum cardStages
     {
         InHand,     //The card is in the Hand of the player.
         Dragging,   //If the player Drags the card.
@@ -26,7 +26,7 @@ public class CardDrag_Peter : MonoBehaviour {
     }
 
     //Current card stage. So you can know what stage the card is currently in
-    private cardStages currentCardStage = cardStages.InHand;
+    public cardStages currentCardStage = cardStages.InHand;
 
     void Start()
     {
