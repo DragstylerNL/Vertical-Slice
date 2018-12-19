@@ -8,6 +8,7 @@ public class ManaSystem : MonoBehaviour
     private int mana = 1;
     public bool playable;
     public int cardMana;
+
     public int Mana
     {
         get

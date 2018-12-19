@@ -16,11 +16,11 @@ public class CardPlace_Peter : MonoBehaviour
     //Position vector when placed
     private Vector3 placedPos;
 
-
+    [Header("Editable objects")]
     [SerializeField]
     private GameObject ahHolder, frameObject;                            //Attack & Health gameobject list.
     private Vector3 ahPositionStart, ahPositionPlaced;      //Attack & Health position.
-    private float ahDistanceStart, ahDistancePlaced;        //Attack & Health horizontal distance from the ahPosition.
+    private float ahDistanceStart, ahDistancePlaced, ahPlacedSize = 0.8f;        //Attack & Health horizontal distance from the ahPosition.
 
     //Default rotation of the card
     private Vector3 startRotation;
@@ -45,6 +45,12 @@ public class CardPlace_Peter : MonoBehaviour
         //Disapear the objects
         DisappearObjects();
 
+        //Setup all the objects that needs to stay to the right position
+        SetUpPlacedCard();
+
+        //Start the animation routine
+        StartCoroutine(AnimationPlaceCard());
+
     }
 
     /// <summary>
@@ -52,12 +58,6 @@ public class CardPlace_Peter : MonoBehaviour
     /// </summary>
     private void DisappearObjects()
     {
-        //Setup all the objects that needs to stay to the right position
-        SetUpPlacedCard();
-
-        //Start the animation routine
-        StartCoroutine(AnimationPlaceCard());
-
         //Deactivate all the gameobjects in the list
         foreach (var objects in disappearList)
         {
@@ -81,6 +81,10 @@ public class CardPlace_Peter : MonoBehaviour
         //Move the AH icons to the right place
         attackObj.transform.localPosition = new Vector3(ahDistancePlaced,0,0);
         healthObj.transform.localPosition = new Vector3(-ahDistancePlaced, 0, 0);
+
+        //Resize the AH icons to a smaller size
+        attackObj.transform.localScale = new Vector3(ahPlacedSize, ahPlacedSize, ahPlacedSize);
+        healthObj.transform.localScale = new Vector3(ahPlacedSize, ahPlacedSize, ahPlacedSize);
 
         //Increase the size
         transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);

@@ -107,13 +107,13 @@ public class CardDrag_Peter : MonoBehaviour {
         //Hover the card when going over it
         else if (currentCardStage == cardStages.Showing)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", .1f, "easeType", iTween.EaseType.easeInOutSine));
+            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", .2f, "easeType", iTween.EaseType.easeInOutSine));
         }
 
         //Hover the card when going over it
         else if (currentCardStage == cardStages.InHand)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[0], "time", .1f, "easeType", iTween.EaseType.easeInOutSine));
+            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[0], "time", .25f, "easeType", iTween.EaseType.easeInOutSine));
         }
     }
 
@@ -140,6 +140,7 @@ public class CardDrag_Peter : MonoBehaviour {
             cDrag = false;
             isDragging = false;
             cAttack = true;
+            currentCardStage = cardStages.Placed;
             gameObject.GetComponent<CardPlace_Peter>().PlaceCard();
 
             return;

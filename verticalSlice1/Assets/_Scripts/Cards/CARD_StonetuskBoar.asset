@@ -15,7 +15,7 @@ MonoBehaviour:
   EFFECT: CHARGE
   Name: Stonetusk Boar
   Description: Charge
-  artwork: {fileID: 0}
+  artwork: {fileID: 2800000, guid: 8d2339bdbe4c5b0489cfcac4a95ff666, type: 3}
   Mana: 1
   Attack: 1
   Health: 1

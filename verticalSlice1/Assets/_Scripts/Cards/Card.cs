@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
-public class Card : ScriptableObject {
+
+public class Card : ScriptableObject
+{
 
     public string CARDTYPE;
     // EFFECTS ARE DESCRIPED ELSEWHERE
@@ -12,7 +14,7 @@ public class Card : ScriptableObject {
     public string Name;
     public string Description;
 
-    public Sprite artwork;
+    public Texture artwork;
 
     public int Mana;
     public int Attack;
