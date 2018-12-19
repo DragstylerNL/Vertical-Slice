@@ -1378,6 +1378,8 @@ GameObject:
   - component: {fileID: 918061333}
   - component: {fileID: 918061334}
   - component: {fileID: 918061335}
+  - component: {fileID: 918061337}
+  - component: {fileID: 918061336}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1434,6 +1436,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playable: 0
   cardMana: 1
+--- !u!114 &918061336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918061331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a811e1926f06074ca0d91c38b392dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mList: []
+--- !u!114 &918061337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918061331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6edef018b63190645b8a1fb54448f275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &944710875
 GameObject:
   m_ObjectHideFlags: 0
