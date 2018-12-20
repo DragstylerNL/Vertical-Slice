@@ -7,6 +7,8 @@ public class EnemyHero : MonoBehaviour
 
     private PlayerHandHolder playerHandComponent;
 
+    private GameObject cardAttack;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -35,7 +37,7 @@ public class EnemyHero : MonoBehaviour
 
     void OnMouseDown()
     {
-        
+        cardAttack.GetComponent<CardAttack_Peter>().SetUpAttack(gameObject);
     }
 
     bool GetAttacking()
@@ -48,7 +50,8 @@ public class EnemyHero : MonoBehaviour
         //Setup the card attack with this gameobject as target
         if (attackingCard != null)
         {
-            attackingCard.GetComponent<CardAttack_Peter>().SetUpAttack(gameObject);
+            cardAttack = attackingCard;
+            Debug.Log("Yes");
             _bool = true;
         }
         else
