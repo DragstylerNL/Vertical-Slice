@@ -16,7 +16,7 @@ public class AudioSystem : MonoBehaviour {
         // get the list
         mList = GetComponent<AudioList>();
 
-        PlayThisSound(0);
+        //PlayThisSound(0);
     }
 
     public void PlayThisSound(int songNumber)

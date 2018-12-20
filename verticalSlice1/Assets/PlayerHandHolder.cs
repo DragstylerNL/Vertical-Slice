@@ -9,22 +9,30 @@ public class PlayerHandHolder : MonoBehaviour
 
     private GameObject cardPrefab;
 
+    private Vector3 transPos;
+
 
 	// Use this for initialization
 	void Start ()
     {
+        transPos = transform.position;
+
         for (int i = 0; i < playerCards.Capacity; i++)
         {
-            InstantiateCard(playerCards[i]);
+            InstantiateCard(playerCards[i], new Vector3(i, transPos.y + (i), transPos.z));
         }
 
+        //ArrangeCards();
 
     }
 
-    public void ArrangeCards()
-    {
-
-    }
+    //public void ArrangeCards()
+    //{
+    //    for (int i = 0; i < playerCards.Capacity; i++)
+    //    {
+    //        playerCards[i].transform.localPosition = new Vector3(i, transPos.y, transPos.z + (i));
+    //    }
+    //}
 
     public GameObject GetAttackingCard()
     {
@@ -41,10 +49,10 @@ public class PlayerHandHolder : MonoBehaviour
         return attackingCard;
     }
 
-    void InstantiateCard(GameObject _prefab)
+    void InstantiateCard(GameObject _prefab, Vector3 _position)
     {
         //Make a crystal
-        GameObject inst = Instantiate(_prefab, transform.position, Quaternion.Euler(new Vector3(-90, 180, 0)));
+        GameObject inst = Instantiate(_prefab, _position, Quaternion.Euler(new Vector3(-90, 180, 0)));
 
         //Set the parent of the prefab to the ShowMana gameobject
         inst.transform.parent = transform;

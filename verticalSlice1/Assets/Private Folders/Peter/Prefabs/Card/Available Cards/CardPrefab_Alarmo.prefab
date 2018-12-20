@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114994731387163648}
   - component: {fileID: 120728693856323334}
   m_Layer: 0
-  m_Name: CardPrefab_Peter
+  m_Name: CardPrefab_Alarmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066727353434580}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0.26, z: -1.2}
+  m_LocalPosition: {x: 0, y: 0.25, z: -5.1}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 224569865563225048}
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f49c270c3ace8b4e8c0a0107d23788d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSt: {fileID: 11400000, guid: 5b1835ef8b1917747b05250f69c69bab, type: 2}
+  cardSt: {fileID: 11400000, guid: fff0e6f1a124e534192531d7308feba4, type: 2}
   minionSprite: {fileID: 1468727571560832}
   mana: {fileID: 114013692237800286}
   attack: {fileID: 114839321679877706}

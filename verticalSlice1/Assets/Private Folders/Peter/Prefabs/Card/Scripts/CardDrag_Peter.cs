@@ -30,11 +30,13 @@ public class CardDrag_Peter : MonoBehaviour {
 
     void Start()
     {
-        positionsList.Add(new Vector3(0, .25f, -5.1f));     //Hand Position
+        transPosition = transform.position;
+
+        positionsList.Add(transform.position);     //Hand Position
         positionsList.Add(new Vector3(0, 6, -1.2f));        //Showing Position
         positionsList.Add(new Vector3(0, 3.5f, -.5f));      //Floating Position
 
-        transPosition = transform.position;
+        
 
         //The start position in in the hand
         transform.position = positionsList[0];
@@ -53,7 +55,7 @@ public class CardDrag_Peter : MonoBehaviour {
             currentCardStage = cardStages.Dragging;
         }
 
-        else if (cAttack && currentCardStage == cardStages.Placed)
+        if (cAttack && currentCardStage == cardStages.Placed)
         {
             cAttack = false;
             GetComponent<CardAttack_Peter>().CanAttack(true);
@@ -103,19 +105,33 @@ public class CardDrag_Peter : MonoBehaviour {
         //Hover above the field when attacking
         else if (currentCardStage == cardStages.Attacking)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", new Vector3(transPosition.x, .3f, transPosition.z), "time", .5f, "easeType", iTween.EaseType.easeInOutSine));
+            TweenTo(new Vector3(transPosition.x, .3f, transPosition.z), .5f, iTween.EaseType.easeInOutSine);
         }
 
         //Hover the card when going over it
         else if (currentCardStage == cardStages.Showing)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", .2f, "easeType", iTween.EaseType.easeInOutSine));
+            TweenTo(positionsList[1], .2f, iTween.EaseType.easeInOutSine);
         }
 
         //Hover the card when going over it
         else if (currentCardStage == cardStages.InHand)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[0], "time", .25f, "easeType", iTween.EaseType.easeInOutSine));
+            TweenTo(positionsList[0], .25f, iTween.EaseType.easeInOutSine);
+        }
+    }
+
+    /// <summary>
+    /// Tween to a position
+    /// </summary>
+    /// <param name="_position"></param>
+    /// <param name="_time"></param>
+    /// <param name="_easeType"></param>
+    public void TweenTo(Vector3 _position, float _time, iTween.EaseType _easeType)
+    {
+        if (transform.position != _position)
+        {
+            iTween.MoveTo(gameObject, iTween.Hash("position", _position, "time", _time, "easeType", _easeType));
         }
     }
 
@@ -150,7 +166,7 @@ public class CardDrag_Peter : MonoBehaviour {
 
 
         print("Nope");
-        iTween.MoveTo(gameObject, iTween.Hash("position", positionsList[1], "time", .1f, "easeType", iTween.EaseType.easeInOutSine));
+        TweenTo(positionsList[1], .1f, iTween.EaseType.easeInOutSine);
         //currentCardStage = cardStages.Showing;
 
         //PositionStage();

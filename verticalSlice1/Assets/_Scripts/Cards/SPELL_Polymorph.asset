@@ -15,7 +15,7 @@ MonoBehaviour:
   EFFECT: SHEEP
   Name: Polymorph
   Description: Transform a minion into a 1/1 Sheep
-  artwork: {fileID: 0}
+  artwork: {fileID: 2800000, guid: 5ad703bce7fb5474aaf5736687ff8474, type: 3}
   Mana: 4
   Attack: 0
   Health: 0

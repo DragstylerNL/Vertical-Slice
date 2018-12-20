@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114994731387163648}
   - component: {fileID: 120728693856323334}
   m_Layer: 0
-  m_Name: CardPrefab_Peter
+  m_Name: CardPrefab_StonetuskBoar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066727353434580}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0.26, z: -1.2}
+  m_LocalPosition: {x: 2, y: 0.25, z: -5.1}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 224569865563225048}

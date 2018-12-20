@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Alarm-o-Bot
   Description: At the start of your turn, swap this minion with a random one in your
     hand
-  artwork: {fileID: 0}
+  artwork: {fileID: 2800000, guid: 02be60ab3590447449129ce33a57604a, type: 3}
   Mana: 3
   Attack: 0
   Health: 3

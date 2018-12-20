@@ -33,7 +33,7 @@ public class CardPlace_Peter : MonoBehaviour
         startRotation = new Vector3(-90, 180, 0);
 
         ahPositionStart = new Vector3(0, -854, 0.121f);
-        ahPositionPlaced = new Vector3(0, -163, 0.064f);
+        ahPositionPlaced = new Vector3(0, 100, 0.064f);
 
         ahDistanceStart = 0.582f;
         ahDistancePlaced = 0.274f;
@@ -50,6 +50,8 @@ public class CardPlace_Peter : MonoBehaviour
 
         //Start the animation routine
         StartCoroutine(AnimationPlaceCard());
+
+        GameObject.Find("AudioSystem").GetComponent<AudioSystem>().PlayThisSound(1);
 
     }
 
