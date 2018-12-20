@@ -19,7 +19,8 @@ public class PlayerHandHolder : MonoBehaviour
 
         for (int i = 0; i < playerCards.Capacity; i++)
         {
-            InstantiateCard(playerCards[i], new Vector3(i, transPos.y + (i), transPos.z));
+            //Crieer alle kaarten
+            InstantiateCard(playerCards[i], new Vector3(i - (playerCards.Capacity * 0.5f), transPos.y + (i * 0.1f), transPos.z));//int i pakt /10 niet... dus dan maar * 0.1f
         }
 
         //ArrangeCards();
@@ -40,9 +41,11 @@ public class PlayerHandHolder : MonoBehaviour
 
         foreach (GameObject _card in playerCards)
         {
+            Debug.Log("Card: " + _card.name + " = " + _card.GetComponent<CardDrag_Peter>().currentCardStage.ToString());
             if (_card.GetComponent<CardDrag_Peter>().currentCardStage == CardDrag_Peter.cardStages.Attacking)
             {
                 attackingCard = _card;
+
             }
         }
 

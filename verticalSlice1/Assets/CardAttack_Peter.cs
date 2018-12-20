@@ -71,6 +71,7 @@ public class CardAttack_Peter : MonoBehaviour
 
     public void CanAttack(bool _value)
     {
+        Debug.Log("cAttack set to: " + _value);
         cAttack = _value;
     }
 

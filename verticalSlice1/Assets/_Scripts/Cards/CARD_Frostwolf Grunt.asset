@@ -15,7 +15,7 @@ MonoBehaviour:
   EFFECT: TAUNT
   Name: Frostwolf Grunt
   Description: TAUNT
-  artwork: {fileID: 0}
+  artwork: {fileID: 2800000, guid: 37a37607f2822c94f9c84785169209d2, type: 3}
   Mana: 2
   Attack: 2
   Health: 2

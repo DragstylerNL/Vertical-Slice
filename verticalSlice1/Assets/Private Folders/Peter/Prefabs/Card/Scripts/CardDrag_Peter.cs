@@ -22,7 +22,8 @@ public class CardDrag_Peter : MonoBehaviour {
         Showing,    //Floating in the air in Hand.
         Floating,   //Showing from Deck to Hand.
         Placed,     //The card when Placed on the board.
-        Attacking   //When the card is Placed and the player can attack the enemy.
+        Attacking,  //When the card is Placed and the player can attack the enemy.
+        GoAttack    //When the card attacks. 
     }
 
     //Current card stage. So you can know what stage the card is currently in
@@ -32,9 +33,10 @@ public class CardDrag_Peter : MonoBehaviour {
     {
         transPosition = transform.position;
 
-        positionsList.Add(transform.position);     //Hand Position
-        positionsList.Add(new Vector3(0, 6, -1.2f));        //Showing Position
-        positionsList.Add(new Vector3(0, 3.5f, -.5f));      //Floating Position
+        positionsList.Add(transform.position);                              //Hand Position
+        positionsList.Add(new Vector3(transform.position.x, 6, -1.2f));     //Showing Position
+        positionsList.Add(new Vector3(0, 3.5f, -.5f));                      //Floating Position
+        positionsList.Add(new Vector3(0, .15f + 0.5f, -1.6f));              //floating when Attacking
 
         
 
@@ -72,7 +74,7 @@ public class CardDrag_Peter : MonoBehaviour {
         if (currentCardStage == cardStages.Dragging)
         PositionLogic();
 
-        currentCardStage = cardStages.Placed;
+        
     }
 
     void OnMouseEnter()
@@ -105,7 +107,7 @@ public class CardDrag_Peter : MonoBehaviour {
         //Hover above the field when attacking
         else if (currentCardStage == cardStages.Attacking)
         {
-            TweenTo(new Vector3(transPosition.x, .3f, transPosition.z), .5f, iTween.EaseType.easeInOutSine);
+            TweenTo(positionsList[3], .35f, iTween.EaseType.easeInSine);
         }
 
         //Hover the card when going over it
@@ -157,6 +159,7 @@ public class CardDrag_Peter : MonoBehaviour {
             //Edit here
             cDrag = false;
             isDragging = false;
+
             cAttack = true;
             currentCardStage = cardStages.Placed;
             gameObject.GetComponent<CardPlace_Peter>().PlaceCard();
