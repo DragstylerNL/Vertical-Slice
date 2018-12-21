@@ -11,22 +11,18 @@ public class DrawFromDeck_Peter : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        positionsList.Add(GameObject.Find("PlayerDeck").transform.position);//Start
-        positionsList.Add(GameObject.Find("PlayerShowCard").transform.position);//Mid
-        positionsList.Add(GameObject.Find("PlayerHand").transform.position);//End
+        positionsList.Add(new Vector3(6.5f,0.2f,-1.2f));//Start
+        positionsList.Add(new Vector3(1.8f, 6f, -0.2f));//Mid
+        //positionsList.Add();//End
+
+        
     }
 	
-	// Update is called once per frame
-	void Update () 
-    {
-		if (Input.GetKeyDown("space"))
-        {
-            StartCoroutine(PlayAnimation(2f));
-        }
-    }
 
-    private IEnumerator PlayAnimation(float waitTime)
+    public IEnumerator PlayAnimation(float waitTime, Vector3 _endPos)
     {
+        transform.position = positionsList[0];
+        positionsList.Add(_endPos);
 
         if (transform.localPosition != positionsList[1])
         {
@@ -44,6 +40,9 @@ public class DrawFromDeck_Peter : MonoBehaviour
         }
 
         yield return new WaitForSeconds(waitTime);
+
+        var cd = gameObject.GetComponent<CardDrag_Peter>();
+        cd.currentCardStage = CardDrag_Peter.cardStages.InHand;
     }
 
 }
