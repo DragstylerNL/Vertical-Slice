@@ -37,7 +37,7 @@ public class EnemyHero : MonoBehaviour
 
     void OnMouseDown()
     {
-        cardAttack.GetComponent<CardAttack_Peter>().SetUpAttack(gameObject);
+        cardAttack.GetComponent<CardAttack_Peter>().SetUpAttack(this.gameObject);
     }
 
     bool GetAttacking()

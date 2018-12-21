@@ -27,7 +27,7 @@ public class CardDrag_Peter : MonoBehaviour {
     }
 
     //Current card stage. So you can know what stage the card is currently in
-    public cardStages currentCardStage = cardStages.InHand;
+    public cardStages currentCardStage;
 
     void Start()
     {
@@ -38,10 +38,20 @@ public class CardDrag_Peter : MonoBehaviour {
         positionsList.Add(new Vector3(0, 3.5f, -.5f));                      //Floating Position
         positionsList.Add(new Vector3(0, .15f + 0.5f, -1.6f));              //floating when Attacking
 
+        //Start the begin animation
+        if (gameObject.name == "CardPrefab_StonetuskBoar")
+        {
+            currentCardStage = cardStages.Floating;
+            var dfd = gameObject.GetComponent<DrawFromDeck_Peter>();
+            dfd.StartCoroutine(dfd.PlayAnimation(2f, positionsList[0]));
+        }
+        else
+        {
+            currentCardStage = cardStages.InHand;
+            //The start position in in the hand
+            transform.position = positionsList[0];
+        }
         
-
-        //The start position in in the hand
-        transform.position = positionsList[0];
     }
 
 
