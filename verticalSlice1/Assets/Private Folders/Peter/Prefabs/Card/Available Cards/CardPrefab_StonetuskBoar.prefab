@@ -1278,13 +1278,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd7e732390221e4f8eba6c49ae0c4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHero: {fileID: 0}
+  EnemyHeroPosition: {x: 0, y: 0, z: 0}
 --- !u!120 &120728693856323334
 LineRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066727353434580}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
