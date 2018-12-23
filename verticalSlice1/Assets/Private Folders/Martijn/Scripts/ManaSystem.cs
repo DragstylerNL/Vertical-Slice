@@ -3,6 +3,9 @@ using System.Collections.Generic;
 //using Boo.Lang;
 using UnityEngine;
 
+/// <summary>
+/// checks mana and determines if card is playable
+/// </summary>
 public class ManaSystem : MonoBehaviour
 {
     private int mana = 1;
@@ -17,10 +20,11 @@ public class ManaSystem : MonoBehaviour
         
         set
         {
+
             if (value >= cardMana)
             {
                 playable = true;
-                value -= cardMana;
+               
             }
             else
             {
