@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Standaard body.0004.ma
-//Last modified: Wed, Jan 09, 2019 12:08:37 PM
+//Name: Standaard body.0005.ma
+//Last modified: Wed, Jan 09, 2019 12:08:41 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AE658A06-4A9B-494B-4DA8-0083277555F9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.7739263761011275 1.4974906293013039 4.2010440028015248 ;
+	setAttr ".t" -type "double3" 5.3635679962961369 1.9519084852689146 6.05571070461259 ;
 	setAttr ".r" -type "double3" -10.53835272808462 -1039.4000000000171 1.0472391919519401e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DA4D3C08-47E1-A033-F111-F8B3488F32EE";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 5.9010672805405147;
+	setAttr ".coi" 8.385668786473639;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1283,4 +1283,4 @@ connectAttr "deleteComponent15.og" "deleteComponent16.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "|pCylinder1|pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "|pCylinder2|pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
-// End of Standaard body.0004.ma
+// End of Standaard body.0005.ma
